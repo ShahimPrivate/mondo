@@ -12,6 +12,7 @@
 
 set -x 
 
-docker run --memory=8g -e ROBOT_JAVA_ARGS=-Xmx7G -v $PWD/../../:/work -w /work/src/ontology --name mondo_test -ti obolibrary/odkfull apk add moreutils
+docker run --memory=8g -e ROBOT_JAVA_ARGS=-Xmx7G -v $PWD/../../:/work -w /work/src/ontology --name mondo_test -ti obolibrary/odkfull
 docker ps --no-trunc
+docker exex mondo_test apk add moreutils
 docker exec mondo_test  "$@"
