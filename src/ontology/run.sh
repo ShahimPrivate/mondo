@@ -9,6 +9,9 @@
 # we therefore map the whole repo (../..) to a docker volume.
 #
 # See README-editors.md for more details.
+
+set -x 
+
 docker run --memory=8g -e ROBOT_JAVA_ARGS=-Xmx7G -v $PWD/../../:/work -w /work/src/ontology --name mondo_test -ti obolibrary/odkfull apk add moreutils
 docker ps --no-trunc
-docker exec --name mondo_test  "$@"
+docker exec mondo_test  "$@"
