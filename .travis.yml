@@ -14,7 +14,7 @@ before_script:
   - cd src/ontology
 
 script:
-  - ./run.sh make test  | ts -s %M:%S
+  - ./run.sh make --debug=v test  | ts -s %M:%S
 
 # whitelist
 branches:
