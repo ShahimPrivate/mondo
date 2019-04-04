@@ -12,9 +12,6 @@
 
 set -x 
 
-docker run --memory=8g -e ROBOT_JAVA_ARGS=-Xmx7G -v $PWD/../../:/work -w /work/src/ontology --name mondo_test -tid obolibrary/odkfull echo Container Started!
-docker ps --no-trunc
-docker exec mondo_test apk add moreutils
-docker exec mondo_test  "$@" | ts -s %M:@%S
-sleep 10
-docker exec mondo_test  "$@" | ts -s %M:@%S
+sudo apt install moreutils
+
+docker run --memory=8g -e ROBOT_JAVA_ARGS=-Xmx7G -v $PWD/../../:/work -w /work/src/ontology --rm -ti obolibrary/odkfull "$@" | ts -s %M:%S
