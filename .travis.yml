@@ -7,12 +7,14 @@ services:
 
 before_install:
   - docker pull obolibrary/odkfull
+  - sudo apt-get update
+  - sudo apt install moreutils
 
 before_script:
   - cd src/ontology
 
 script:
-  - ./run.sh make HelloWorld
+  - ./run.sh make HelloWorld  | ts -s %M:%S
 
 # whitelist
 branches:
