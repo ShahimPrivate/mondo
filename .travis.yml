@@ -10,7 +10,7 @@ before_script:
   - cd src/ontology
 
 script:
-  - ./run.sh make test
+  - ./run.sh make HelloWorld
 
 # whitelist
 branches:

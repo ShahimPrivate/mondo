@@ -102,6 +102,8 @@ all_artefacts: all_reports $(ARTEFACTS)
 
 test: roundtrip.obo debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
 
+HelloWorld:
+	echo "Hello from Make in Mondo"
 
 # ----------------------------------------
 # Staging releases
